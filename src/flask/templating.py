@@ -86,8 +86,9 @@ class DispatchingJinjaLoader(BaseLoader):
 
         if trv is not None:
             return trv
-        raise TemplateNotFound(template)
-
+        # raise TemplateNotFound(template)
+        return None
+        
     def _get_source_fast(
         self, environment: BaseEnvironment, template: str
     ) -> tuple[str, str | None, t.Callable[[], bool] | None]:
